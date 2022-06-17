@@ -56,3 +56,29 @@
     }
     greeting("Mr Sun", new Date());
     ```
+### Type Annotations on Variables
+- When you declare a variable using const, var, or let, you can optionally add a type annotation to explicitly specify the type of the variable:
+    ```
+    let myName: string = "Alice";
+    ```
+- TypeScript tries to automatically infer the types in your code. For example, the type of a variable is inferred based on the type of its initializer
+    ```
+    // No type annotation needed -- 'myName' inferred as type 'string'
+    let myName = "Alice";
+    ```
+### Functions
+- Parameter Type Annotations
+    ```
+    // Parameter type annotation
+    function greet(name: string) {
+        console.log("Hello, " + name.toUpperCase() + "!!");
+    }
+    ```
+
+- return type Annotations
+- You can also add return type annotations. Return type annotations appear after the parameter list:
+    ```
+    function getFavoriteNumber(): number {
+        return 26;
+    }
+    ```
