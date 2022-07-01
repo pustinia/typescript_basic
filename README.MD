@@ -82,3 +82,32 @@
         return 26;
     }
     ```
+### tsconfig.json file
+- create initial tsconfig.json file
+    ```
+    tsc --init 
+    # in tsconfig.json file
+    "target": "es2016" //=> node.js 에서는 es2016을 대부분 지원한다. https://node.green 에서 확인 가능
+    "lib" //=> target에 정의된 값 대신 커스텀하게 사용하는 경우 사용
+    "module": "commonjs"
+    ```
+- js 파일을 typescript에서 인식하게 하려면, d.ts 파일이 필요함 이것은 type 정의임.
+- js 파일에서 JSDoc 만 추가하면 type을 검증해줌.. 좋네..
+
+### 아. 뭐가 많고만...
+```
+NODE_OPTIONS='--experimental-specifier-resolution=node'
+```
+- To enable the automatic extension resolution and importing from directories that include an index file use the node mode
+
+- nodejs types 들을 모두 정의해놓은 사람들이 있으니 갔다가 쓰자. 멋진 사람들...
+- 나도 참여할 수 있겠네...
+- https://github.com/DefinitelyTyped/DefinitelyTyped
+```
+npm i -D @types/node
+```
+
+- rabbitmq 테스트 모듈 만들기 ( 진짜목적 ) [official sample](https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html)
+  ```
+  npm install amqplib
+  ```

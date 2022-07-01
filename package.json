@@ -2,11 +2,21 @@
   "name": "typescript_playground",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/checkmq.ts",
+    "start": "node build/checkmq.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.0",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/node": "^18.0.0"
+  }
 }

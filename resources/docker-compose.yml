@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  rabbitmq-test:                # service name
+    build: .
+    container_name: rabbitmq-test  # container
+    hostname: rabbitmq-test        # container server hostname
+    restart: always                # try restart always
+    user: "501:20"                 # adding data & log folder owner about host user
+    environment:
+      RABBITMQ_NODENAME: myrabbitnode  # created => myrabbittest@rabbitmq-test
+      RABBITMQ_LOGS: "myrabbit.log"    # set log file name
+      #RABBITMQ_USE_LONGNAME: "true"  # set true when using dns hostname
+      TZ: Asia/Seoul
+    volumes:
+      - "./log:/var/log/rabbitmq"      # log path on host
+      - "./data:/var/lib/rabbitmq"     # rabbitmq data path on host
+    ports:
+      - "5672:5672"   # used by AMQP 0-9-1 and 1.0 clients without and with TLS
+      - "15672:15672" # HTTP API clients, management UI and rabbitmqadmin
+      - "4369:4369"   # epmd, a peer discovery service used by RabbitMQ nodes and CLI tools
+      - "25672:25672" # clustering, purpose: inter-node and CLI tool communication
+    # set other rabbitmq server ip hosts for cluster
+    #extra_hosts:
+    #  - "rabbitmq-2:192.168.0.4"
+    #  - "rabbitmq-3:192.168.0.4"
+
+# docker-compose up --build -d
