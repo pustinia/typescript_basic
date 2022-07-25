@@ -3,5 +3,6 @@
     "port": 5672,
     "username": "admin",
     "password": "admin",
-    "vhost": "/"
+    "vhost": "/",
+    "countstosendmq": 200
 }

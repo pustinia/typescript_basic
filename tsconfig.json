@@ -11,8 +11,10 @@
     "lib": ["ES6"],
     //"allowJs": true      // using js in ts
     "esModuleInterop": true,
-    "module": "CommonJS"
-
+    "module": "CommonJS",
+    "removeComments": true,
+    "noImplicitAny": true,
+    
     // where is going to be running. DOM => documents 가능함. windows 가능함.
     // vscode에게 autocomplete 기능을 열어줌.
 

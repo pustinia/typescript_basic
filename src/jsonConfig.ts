@@ -9,18 +9,20 @@ interface MqConfig {
     vhost: string;
 }
 
-export class MqConfigOption implements MqConfig {
+class MqConfigOption implements MqConfig {
     hostname: string;
     port: number;
     username: string;
     password: string;
     vhost: string;
-    constructor(hostname: string, port: number, username: string, password: string, vhost: string){
+    countstosendmq: number;
+    constructor(hostname: string, port: number, username: string, password: string, vhost: string, countstosendmq:number){
         this.hostname = hostname;
         this.port = port;
         this.username = username;
         this.password = password;
         this.vhost = vhost;
+        this.countstosendmq = countstosendmq;
     }
 }
 

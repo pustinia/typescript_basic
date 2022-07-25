@@ -21,7 +21,8 @@ interface BlockShape {
 }
 
 class Block implements BlockShape {
-    public hash: string;
+    //public hash: string;
+    readonly hash: string;
     constructor(
         public prevHash: string,
         public height: number,

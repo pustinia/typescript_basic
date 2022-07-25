@@ -2,13 +2,13 @@
 import path from 'path';
 import client, {Connection, Channel, ConsumeMessage, Options} from 'amqplib';
 import JsonConfig from './jsonConfig';
-const MAX_CNT: number = 10000;
-const TIME_LABEL: string = `duration`;
 
 // set config.json path
 const configFilePath = `resources`;
 const configFile = `config.json`;
 const config = JsonConfig(path.join(`${__dirname}`,`..`, configFilePath, configFile));
+const TIME_LABEL: string = `duration`;
+const MAX_CNT: number = config.countstosendmq;
 
 // rabbitmq config
 const rabitmqSettings: Options.Connect = {
